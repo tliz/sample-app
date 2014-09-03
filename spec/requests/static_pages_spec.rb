@@ -51,4 +51,19 @@ RSpec.describe "StaticPages", :type => :request do
 
   end
   
+  #test that Content Page exists
+  describe "Content Page" do
+
+    it "should have the content 'Content'" do
+      visit '/static_pages/content'
+      expect(page).to have_content('Content')
+    end
+
+    it "should have the title 'Content '" do
+      visit '/static_pages/content'
+      expect(page).to have_title("Tliz | Content")
+    end
+
+  end
+
 end
